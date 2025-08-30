@@ -1,0 +1,18 @@
+max-visible=5
+
+# Using simple hex colors without transparency
+background-color=#101011
+text-color=#c3c3c3
+border-color=#4B8889
+width=300
+height=900
+border-size=2
+border-radius=5
+
+icon-path=/usr/share/icons/Papirus
+max-icon-size=75
+font=IBM Plex Sans Medium 10
+
+default-timeout=3000
+ignore-timeout=0
+
