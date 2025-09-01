@@ -26,11 +26,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-export INPUT_METHOD=fcitx
-export SDL_IM_MODULE=fcitx
-
 export PATH="/opt/cuda/bin:$PATH"
 export LD_LIBRARY_PATH="/opt/cuda/lib64:$LD_LIBRARY_PATH"
+
