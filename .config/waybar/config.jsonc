@@ -13,7 +13,7 @@
   ],
   "modules-right": [
     "tray",
-    "pulseaudio",
+    "group/group-audio",
     "cpu",
     "memory",
     "power-profiles-daemon",
@@ -116,30 +116,6 @@
       "power-saver": ""
     }
   },
-  "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-muted": "󰖁 0% {format_source}",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        ""
-      ]
-    },
-    "scroll-step": 5,
-    "on-click": "pavucontrol",
-    "ignored-sinks": [
-      "Easy Effects Sink"
-    ],
-    "format-source": "",
-    "format-source-muted": ""
-  },
   "battery": {
     "states": {
         "warning": 30,
@@ -181,6 +157,46 @@
       "tooltip": true,
       "tooltip-format": "Power off system",
       "on-click": "shutdown now"
+  },
+  "group/group-audio": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 250,
+        "transition-left-to-right": false
+    },
+    "modules": [
+        "pulseaudio", // First element is the "group leader" and won't ever be hidden
+        "pulseaudio/slider"
+    ]
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "󰖁 0% {format_source}",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ],
+    "format-source": "",
+    "format-source-muted": ""
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
   }
 }
 

@@ -20,8 +20,9 @@ tooltip {
     /* tooltip rounded corners */
 }
 
-#workspaces button,
+#workspaces,
 #group-power,
+#pulseaudio,
 #mpris,
 #privacy-item,
 #bluetooth,
@@ -31,7 +32,6 @@ tooltip {
 #power-profiles-daemon,
 #memory,
 #pulseaudio,
-#gamemode,
 #battery,
 #custom-updates {   
     background: #091833; 
@@ -58,24 +58,48 @@ tooltip {
     font-size: 10px;
     color: #0abdc6;
 }
-
 #workspaces button.empty {
     padding: 0px 10px;
 }
-
 #workspaces button:first-child {
     margin-left: 0;
 }
-
 #workspaces button.active {
-    /* active workspace */
     background: #133e7c;
 
 }
-
 #workspaces button:hover {
     background: #133e7c;
-    /* hovered workspace color */
+}
+
+
+
+
+#pulseaudio-slider {
+    padding: 4px 10px;
+    margin: 10px 4px 4px 4px;
+    background: #091833; 
+    border-radius: 15px;
+}
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    background: #0abdc6;
+}
+#pulseaudio-slider trough {
+    min-height: 5px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: black;
+}
+#pulseaudio-slider highlight {
+    min-width: 5px;
+    border-radius: 5px;
+    background: #0abdc6;
 }
 
 @keyframes blink {
