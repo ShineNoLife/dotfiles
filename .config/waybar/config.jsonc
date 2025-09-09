@@ -50,9 +50,7 @@
     "player-icons": {
       "default": "󰎈",
       "mpv": "",
-      "vlc": "<span color='#E85E00'>󰕼</span>",
-      "spotify": "<span color='#1DB954'></span>",
-      "brave": "<span font='normal Font Awesome 6 Free' color='#ed7009'></span>"
+      "spotify": "<span color='#0abdc6'></span>",
     },
     "status-icons": {
       "paused": "⏸",
@@ -100,12 +98,12 @@
   },
   "cpu": {
     "interval": 30,
-    "format": " {usage}%",
+    "format": "{usage}% ",
     "max-length": 10
   },
   "memory": {
     "interval": 30,
-    "format": " {used:0.1f} GB"
+    "format": "{used:0.1f} GB "
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -119,7 +117,7 @@
     }
   },
   "pulseaudio": {
-    "format": "{icon} {volume}% {format_source}",
+    "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "󰖁 0% {format_source}",
     "format-icons": {
@@ -147,7 +145,7 @@
         "warning": 30,
         "critical": 15
     },
-    "format": "{icon} {capacity}%",
+    "format": "{capacity}% {icon}",
     "format-charging": "󰂄 {capacity}%",
     "format-plugged": "󰂄 {capacity}%",
     "format-alt": "{time} {icon}",
