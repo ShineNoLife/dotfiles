@@ -7,6 +7,7 @@ configuration {
 	drun-display-format:        "{name}";
 }
 
+
 /*
 └── window 
     └── mainbox

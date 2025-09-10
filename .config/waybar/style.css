@@ -65,11 +65,11 @@ tooltip {
     margin-left: 0;
 }
 #workspaces button.active {
-    background: #00fff9;
+    background: #133e7c;
 
 }
 #workspaces button:hover {
-    background: #00fff9;
+    background: #133e7c;
 }
 
 
