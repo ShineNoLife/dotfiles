@@ -42,7 +42,7 @@ tooltip {
     /* extend pill size, vertical then horizontal */
     border-radius: 15px; /*Default 5*/
     /* rounded corners */
-    color: #0abdc6;
+    color: #00fff9;
 }
 
 /* extend empty space on both side of the bar,
@@ -56,7 +56,7 @@ tooltip {
 
 #workspaces button {
     font-size: 10px;
-    color: #0abdc6;
+    color: #00fff9;
 }
 #workspaces button.empty {
     padding: 0px 10px;
@@ -65,11 +65,11 @@ tooltip {
     margin-left: 0;
 }
 #workspaces button.active {
-    background: #133e7c;
+    background: #00b8ff;
 
 }
 #workspaces button:hover {
-    background: #133e7c;
+    background: #00b8ff;
 }
 
 
@@ -88,7 +88,7 @@ tooltip {
     background-image: none;
     border: none;
     box-shadow: none;
-    background: #0abdc6;
+    background: #00fff9;
 }
 #pulseaudio-slider trough {
     min-height: 5px;
@@ -99,7 +99,7 @@ tooltip {
 #pulseaudio-slider highlight {
     min-width: 5px;
     border-radius: 5px;
-    background: #0abdc6;
+    background: #00fff9;
 }
 
 @keyframes blink {
