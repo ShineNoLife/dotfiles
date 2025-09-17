@@ -9,6 +9,7 @@ fi
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias fft='fastfetch'
 
 # auto completion settings
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*'
