@@ -5,15 +5,16 @@
   "modules-left": [
     "group/group-power",
     "hyprland/workspaces",
-    "mpris",
+    "clock",
     "privacy"
   ],
   "modules-center": [
-    "clock"
+    "group/group-audio-display"
   ],
   "modules-right": [
+    // "cava",
+    "group/group-audio-control",
     "tray",
-    "group/group-audio",
     "cpu",
     "memory",
     "power-profiles-daemon",
@@ -158,15 +159,24 @@
       "tooltip-format": "Power off system",
       "on-click": "shutdown now"
   },
-  "group/group-audio": {
+  "group/group-audio-display": {
+    "orientation": "inherit",
+    "modules": [
+      "cava",
+      "mpris", // First element is the "group leader" and won't ever be hidden
+      "cava"
+        // "pulseaudio/slider"
+    ]
+  },
+  "group/group-audio-control": {
     "orientation": "inherit",
     "drawer": {
         "transition-duration": 250,
         "transition-left-to-right": false
     },
     "modules": [
-        "pulseaudio", // First element is the "group leader" and won't ever be hidden
-        "pulseaudio/slider"
+      "pulseaudio",
+      "pulseaudio/slider"
     ]
   },
   "pulseaudio": {
@@ -197,6 +207,24 @@
     "min": 0,
     "max": 100,
     "orientation": "horizontal"
-  }
+  },
+  "cava": {
+        // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 60,
+        "autosens": 1,
+        "bars": 10,
+        "method": "pipewire",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
+    }
 }
 

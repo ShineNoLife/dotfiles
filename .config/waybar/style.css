@@ -22,8 +22,9 @@ tooltip {
 
 #workspaces,
 #group-power,
-#pulseaudio,
-#mpris,
+#group-audio-display,
+#group-audio-control,
+/* #mpris, */
 #privacy-item,
 #bluetooth,
 #clock,
@@ -31,26 +32,26 @@ tooltip {
 #cpu,
 #power-profiles-daemon,
 #memory,
-#pulseaudio,
 #battery,
+/* #cava, */
 #custom-updates {   
     background: #091833; 
     /* background color */
     margin: 10px 4px 4px 4px;
     /* empty spaces around */
-    padding: 4px 10px;
-    /* extend pill size, vertical then horizontal */
-    border-radius: 15px; /*Default 5*/
+    padding: 0px 8px 0px 8px;
     /* rounded corners */
+    border-radius: 15px; /*Default 5*/
     color: #00b8ff;
 }
 
-/* extend empty space on both side of the bar,
- * value from ~/.config/hypr/hyprland.conf
- * gaps_out (8px) + border size (2px) = 10px */
+#mpris,
+#cava {
+    padding: 0px 2px;
+}
 
 #privacy-item {
-    background: #e64553;
+    background: #9600ff;
     color: #15161e;
 }
 
@@ -76,8 +77,7 @@ tooltip {
 
 
 #pulseaudio-slider {
-    padding: 4px 10px;
-    margin: 10px 4px 4px 4px;
+    padding: 2px 10px;
     background: #091833; 
     border-radius: 15px;
 }
