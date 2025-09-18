@@ -22,9 +22,10 @@ tooltip {
 
 #workspaces,
 #group-power,
-#group-audio-display,
 #group-audio-control,
-/* #mpris, */
+/* #group-audio-display, */
+#mpris,
+/* #cava, */
 #privacy-item,
 #bluetooth,
 #clock,
@@ -33,7 +34,6 @@ tooltip {
 #power-profiles-daemon,
 #memory,
 #battery,
-/* #cava, */
 #custom-updates {   
     background: #091833; 
     /* background color */
@@ -43,11 +43,6 @@ tooltip {
     /* rounded corners */
     border-radius: 15px; /*Default 5*/
     color: #00b8ff;
-}
-
-#mpris,
-#cava {
-    padding: 0px 2px;
 }
 
 #privacy-item {
