@@ -5,7 +5,8 @@
   "modules-left": [
     "group/group-power",
     "hyprland/workspaces",
-    "clock"
+    "clock",
+    "group/group-audio-display"
     // "privacy"
   ],
   "modules-center": [
@@ -81,7 +82,7 @@
   },
   "clock": {
     "interval": 1,
-    "format": "{:%H:%M} ",
+    "format": "{:%a %d %b 󰃭 | %H:%M }",
     "tooltip": true,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -104,11 +105,12 @@
     "interval": 30,
     "format": "{usage}% ",
     "max-length": 10,
-    // "on-click": "btop"
+    "on-click": "kitty -e btop"
   },
   "memory": {
     "interval": 30,
-    "format": "{used:0.1f} GB "
+    "format": "{used:0.1f} GB ",
+    "on-click": "kitty -e btop"
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -166,8 +168,7 @@
   "group/group-audio-display": {
     "orientation": "inherit",
     "modules": [
-      "cava",
-      "pulseaudio" // First element is the "group leader" and won't ever be hidden
+      "cava"
         // "pulseaudio/slider"
     ]
   },
@@ -178,12 +179,12 @@
         "transition-left-to-right": false
     },
     "modules": [
-      "group/group-audio-display",
+      "pulseaudio",
       "pulseaudio/slider"
     ]
   },
   "pulseaudio": {
-    "format": " | {volume}% {icon} |",
+    "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "󰖁 0% {format_source}",
     "format-icons": {
