@@ -1,0 +1,232 @@
+/***
+ *    ┏┓┓ ┏┏┓┓┏┳┓┏┓  ┏┓┓┏┏┓┳┓┏┓┏┓┳┓┏┓┏┓┏┳┓
+ *    ┗┓┃┃┃┣┫┗┫┃┃┃ ━━┣ ┃┃┣ ┣┫┣ ┃┃┣┫┣ ┗┓ ┃ 
+ *    ┗┛┗┻┛┛┗┗┛┛┗┗┛  ┗┛┗┛┗┛┛┗┻ ┗┛┛┗┗┛┗┛ ┻ 
+ *                                        
+ */
+
+/* Colors */
+:root {
+    --background:         #272e33;
+    --background-alt:     #475258;
+    --background-alt-darker: #414b50;
+    --accent-normal:      #00b8ff;
+    --accent-error:       #9600ff;
+    --bordercolor:        #00b8ff;
+    --fontcolor:          #00b8ff;
+    --fontaltcolor:       #272e33;
+}
+
+/* Config */
+
+* {
+    font-family: "JetbrainsMono NFP SemiBold";
+    font-style: italic;
+}
+
+/* Notification */
+
+.notification {
+    background: var(--background);
+    color: var(--fontcolor);
+    border: 3px solid var(--bordercolor);
+    border-radius: 10px;
+    padding:10px;
+}
+
+.body {
+  color: var(--fontcolor);
+}
+
+.summary {
+  font-size: 16px;
+  font-weight: 700;
+  background: transparent;
+  color: var(--accent-normal);
+  text-shadow: none;
+}
+
+.time {
+  font-size: 16px;
+  font-weight: 700;
+  background: transparent;
+  color: var(--fontcolor);
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.close-button {
+  background-color: var(--accent-error);
+  color: var(--fontaltcolor);
+  margin-top: 5px;
+  margin-right: 5px;
+  border-radius: 6px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    color: var(--fontcolor);
+    background: transparent;
+}
+
+.notification.critical progress {
+  background-color: var(--accent-error);
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: var(--accent-normal);
+}
+
+/* Control Center */
+
+.control-center {
+    background-color: var(--background);
+    color: var(--fontcolor);
+    border: 3px solid var(--bordercolor);
+    padding: 10px;
+}
+
+/* Notifications expanded-group */
+
+.notification-group {
+  background-color: transparent;
+  margin: 2px 8px 2px 8px;
+  font-size: 14px;
+}
+
+.notification-group-icon {
+  color: var(--fontcolor);
+}
+
+.notification-group-headers {
+  color: var(--fontcolor);
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: var(--accent-normal);
+  color: var(--fontaltcolor);
+  margin: 4px; 
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: var(--accent-error);
+  color: var(--fontaltcolor);
+}  
+
+/* widget title */
+.widget-title {
+  color: var(--fontcolor);
+}
+.widget-title>button {
+  font-size: 1rem;
+  color: var(--fontcolor);
+  background: var(--background-alt-darker);
+  box-shadow: none;
+}
+
+.widget-title>button:hover {
+  background: var(--accent-error);
+  color: var(--fontaltcolor);
+}
+
+/* widget button grid */
+button {
+    border: 0px;
+    min-width: 35px;
+    background: var(--background-alt);
+}
+
+.widget-buttons-grid {
+  font-size: x-large;
+  background: var(--background-alt-darker);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    color: var(--fontcolor);
+    margin: 8px;
+    padding: 10px;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: color-mix(in srgb, var(--fontcolor) 55%, transparent);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: var(--accent-normal);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
+    color: var(--fontaltcolor);
+}
+
+/* dnd widget */
+.widget-dnd {
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: large;
+  color: var(--fontcolor);
+}
+
+.widget-dnd>label {
+  color: var(--fontcolor);
+}
+
+.widget-dnd>switch {
+  background: var(--background-alt);
+  color: var(--fontcolor);
+  border-radius: 6px;
+}
+
+.widget-dnd>switch:checked {
+  background: var(--accent-error);
+  border: 1px solid var(--accent-error);
+}
+
+/* volume & backlight widget */
+
+.widget-volume {
+  background: var(--background-alt-darker);
+  color: var(--fontcolor);
+  font-size: x-large;
+}
+
+.widget-backlight {
+  background: var(--background-alt-darker);
+  color: var(--fontcolor);
+  font-size: x-large;
+}
+
+/* music player widget */
+.widget-mpris {
+  background: transparent;
+  margin: 8px;
+}
+
+.widget-mpris button {
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+.widget-mpris button:hover {
+  background-color: var(--accent-normal);
+  color: var(--fontaltcolor);
+}
+
+/* sliders in backlight and volume */
+
+trough slider {
+    background: var(--fontcolor);
+}
+
+trough slider:hover {
+    background: var(--accent-normal);
+}
+
+trough highlight {
+  background: var(--accent-normal);
+}
