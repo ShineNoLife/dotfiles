@@ -7,14 +7,14 @@
 
 /* Colors */
 :root {
-    --background:         #272e33;
-    --background-alt:     #475258;
-    --background-alt-darker: #414b50;
+    --background:         #091833;
+    --background-alt:     #133e7c;
+    --background-alt-darker: #0e2b54;
     --accent-normal:      #00b8ff;
     --accent-error:       #9600ff;
     --bordercolor:        #00b8ff;
     --fontcolor:          #00b8ff;
-    --fontaltcolor:       #272e33;
+    --fontaltcolor:       #091833;
 }
 
 /* Config */

@@ -5,15 +5,15 @@
   "modules-left": [
     "group/group-power",
     "hyprland/workspaces",
-    "clock",
     "group/group-audio-display"
     // "privacy"
   ],
   "modules-center": [
-    "mpris"
+    "clock"
+    // "mpris"
   ],
   "modules-right": [
-    "group/group-audio-control",
+    // "group/group-audio-control",
     "tray",
     "cpu",
     "memory",
