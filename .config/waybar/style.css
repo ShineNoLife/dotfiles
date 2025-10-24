@@ -1,3 +1,5 @@
+@import "/home/shinenolife/.config/colors/shine-theme.css";
+
 * {
     font-family: "JetBrainsMono Nerd Font Propo";
     font-weight: bold;
@@ -14,7 +16,7 @@ tooltip {
     font-family: inherit;
     background: #15161e;
     /* tooltip background */
-    border: 2px solid #c0caf5;
+    border: 2px solid @surface;
     /* tooltip border size and color */
     border-radius: 5px;
     /* tooltip rounded corners */
@@ -36,30 +38,30 @@ tooltip {
 #custom-swaync,
 #battery,
 #custom-updates {   
-    background: #091833; 
+    background: @bg; 
     /* background color */
     margin: 10px 4px 4px 4px;
     /* empty spaces around */
     padding: 0px 8px 0px 8px;
     /* rounded corners */
     border-radius: 15px; /*Default 5*/
-    color: #00b8ff;
+    color: @primary;
 }
 
 
 #cava {
-    color: #9600ff;
+    color: @highlight;
 }
 
 
 #privacy-item {
-    background: #9600ff;
+    background: @warning;
     color: #15161e;
 }
 
 #workspaces button {
     font-size: 10px;
-    color: #00b8ff;
+    color: @primary;
 }
 #workspaces button.empty {
     padding: 0px 10px;
@@ -68,11 +70,11 @@ tooltip {
     margin-left: 0;
 }
 #workspaces button.active {
-    background: #133e7c;
+    background: @surface;
 
 }
 #workspaces button:hover {
-    background: #133e7c;
+    background: @surface;
 }
 
 
@@ -80,7 +82,7 @@ tooltip {
 
 #pulseaudio-slider {
     padding: 2px 10px;
-    background: #091833; 
+    background: @bg; 
     border-radius: 15px;
 }
 #pulseaudio-slider slider {
@@ -90,18 +92,18 @@ tooltip {
     background-image: none;
     border: none;
     box-shadow: none;
-    background: #00b8ff;
+    background: @primary;
 }
 #pulseaudio-slider trough {
     min-height: 5px;
     min-width: 80px;
     border-radius: 5px;
-    background-color: black;
+    background-color: @bg;
 }
 #pulseaudio-slider highlight {
     min-width: 5px;
     border-radius: 5px;
-    background: #00b8ff;
+    background: @primary;
 }
 
 @keyframes blink {
