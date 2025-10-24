@@ -1,0 +1,153 @@
+@import "/home/shinenolife/.config/themes/shine-theme.css";
+
+/* =======================
+   Window and Backgrounds
+======================= */
+window,
+dialog,
+.background {
+    background-color: @bg;
+    color: @fg;
+}
+
+/* =======================
+   Header Bar / Window Title
+======================= */
+headerbar {
+    spacing: 12px;
+    padding: 4px 8px;
+    background-color: @surface;
+    border-bottom: 1px solid @highlight;
+    min-height: 28px;
+}
+
+/* =======================
+   Menubar and Menu Items
+======================= */
+menubar {
+    spacing: 8px;
+    padding: 2px 4px;
+    background-color: @surface;
+    color: @fg;
+}
+
+menuitem {
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+menuitem:hover,
+menuitem:active {
+    background-color: @primary;
+    color: @bg;
+}
+
+menuitem:selected {
+    background-color: @surface;
+    color: @fg;
+}
+
+/* =======================
+   Buttons
+======================= */
+button {
+    background-color: @surface;
+    color: @fg;
+    border-radius: 6px;
+    padding: 4px 8px;
+    border: 1px solid @highlight;
+}
+
+button:hover,
+button:active {
+    background-color: @primary;
+    color: @bg;
+    border: 1px solid @secondary;
+}
+
+/* =======================
+   Entry Fields and Textviews
+======================= */
+entry,
+textview {
+    background-color: @surface;
+    color: @fg;
+    border: 1px solid @highlight;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+entry:selected,
+textview:selected {
+    background-color: @surface;
+    color: @fg;
+}
+
+/* =======================
+   Tabs / Notebook
+======================= */
+notebook tab,
+tab {
+    background-color: @surface;
+    color: @fg;
+    border-radius: 4px 4px 0 0;
+    padding: 4px 8px;
+    margin-right: 2px;
+}
+
+notebook tab:checked,
+tab:selected {
+    background-color: @surface;
+    color: @fg;
+}
+
+/* =======================
+   Scrollbars and Scales
+======================= */
+scrollbar,
+scale {
+    background-color: @surface;
+    border-radius: 4px;
+}
+
+/* =======================
+   Tooltips
+======================= */
+tooltip {
+    background-color: @surface;
+    color: @fg;
+    border: 1px solid @highlight;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+/* =======================
+   Selections
+======================= */
+treeview row:selected,
+selection,
+:selection {
+    background-color: @surface;
+    color: @fg;
+}
+
+/* =======================
+   Misc / Secondary Elements
+======================= */
+progressbar,
+statusbar {
+    background-color: @surface;
+    color: @fg;
+}
+
+label,
+text,
+entry text {
+    color: @fg;
+}
+
+treeview row:selected,
+treeview row:selected:focus {
+    background-color: @primary;
+    color: @bg;
+}

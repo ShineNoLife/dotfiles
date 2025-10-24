@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Theme
+Name=Shine GTK Theme
+Comment=A custom GTK theme by Shinenolife
+Encoding=UTF-8
+
+[X-GTK-Theme]
+GtkTheme=shine-gtk

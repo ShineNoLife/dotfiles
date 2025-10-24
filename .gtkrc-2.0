@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/shinenolife/.gtkrc-2.0.mine"
-gtk-theme-name="catppuccin-mocha-sapphire-standard+default"
+gtk-theme-name="Materia-compact"
 gtk-icon-theme-name="Papirus-Light"
 gtk-font-name="JetBrainsMono Nerd Font Bold 11"
 gtk-cursor-theme-name="default"
