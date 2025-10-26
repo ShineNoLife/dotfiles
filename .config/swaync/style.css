@@ -11,7 +11,7 @@
 /* Notification */
 
 .notification {
-    background: @bg;
+    background: @background;
     color: @primary;
     border: 3px solid @bordercolor;
     border-radius: 10px;
@@ -65,7 +65,7 @@
 /* Control Center */
 
 .control-center {
-    background-color: @bg;
+    background-color: @background;
     color: @fontcolor;
     border: 3px solid @bordercolor;
     padding: 10px;
@@ -122,7 +122,7 @@
 button {
     border: 0px;
     min-width: 35px;
-    background: @bg;
+    background: @background;
 }
 
 .widget-buttons-grid {
@@ -161,7 +161,7 @@ button {
 }
 
 .widget-dnd>switch {
-  background: @bg;
+  background: @background;
   color: @primary;
   border-radius: 6px;
 }

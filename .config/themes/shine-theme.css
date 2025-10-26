@@ -1,6 +1,6 @@
-@define-color bg #0a0f1e;
+@define-color background #0a0f1e;
 @define-color surface #1b2230;
-@define-color fg #d0d6e0;
+@define-color foreground #d0d6e0;
 @define-color primary #00b3ff;
 @define-color secondary #36f9f6;
 @define-color highlight #c77dff;

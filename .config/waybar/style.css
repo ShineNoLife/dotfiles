@@ -3,33 +3,62 @@
 * {
     font-family: "JetBrainsMono Nerd Font Propo";
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     min-height: 0;
 }
 
+
+/* Waybar */
 window#waybar {
     background: transparent;
     /* main window transparent background */
 }
-
 tooltip {
     font-family: inherit;
-    background: #15161e;
-    /* tooltip background */
-    border: 2px solid @surface;
-    /* tooltip border size and color */
+    background: @background;
+    border: 2px solid @primary;
     border-radius: 5px;
-    /* tooltip rounded corners */
 }
 
+
+
+/* Left / Right / Center Modules  */
+.modules-right {
+    background: @background; 
+    margin: 4px 4px 4px 4px; /* U R L D */
+    padding: 0px 8px 0px 8px;
+    border-radius: 5px; /*Default 5*/
+    border: 1.5px solid @primary;
+    color: @primary;
+}
+.modules-right > * {
+    padding: 0px 8px 0px 8px;
+}
+.modules-left {
+    background: @background; 
+    margin: 4px 4px 4px 4px;
+    padding: 0px 8px 0px 8px;
+    border-radius: 5px; /*Default 5*/
+    border: 1.5px solid @primary;
+    color: @primary;
+}
+.modules-center {
+    background: @background; 
+    margin: 4px 4px 4px 4px;
+    border-radius: 5px; /*Default 5*/
+    border: 1.5px solid @primary;
+    color: @primary;
+}
+
+
+
+/* Modules padding */
 #workspaces,
 #group-power,
 #group-audio-control,
 #group-audio-display,
 #mpris,
-/* #cava, */
 #privacy-item,
-#bluetooth,
 #clock,
 #tray,
 #cpu,
@@ -37,41 +66,39 @@ tooltip {
 #memory,
 #custom-swaync,
 #battery,
-#custom-updates {   
-    background: @bg; 
-    /* background color */
-    margin: 10px 4px 4px 4px;
-    /* empty spaces around */
-    padding: 0px 8px 0px 8px;
-    /* rounded corners */
-    border-radius: 15px; /*Default 5*/
-    color: @primary;
+#custom-split,
+#custom-updates { 
+    margin: 0px 2px 0px 2px;
 }
 
-
-#cava {
+#custom-openbracket {
+    margin: 0px 0px 0px 12px;
+    color: @highlight;
+}
+#custom-closebracket {
+    margin: 0px 12px 0px 0px;
     color: @highlight;
 }
 
 
+
+/* Other modules stuff */
+#cava {
+    color: @highlight;
+}
 #privacy-item {
     background: @warning;
     color: #15161e;
 }
 
+
+
+/* Worspace buttons */
 #workspaces button {
-    font-size: 10px;
     color: @primary;
-}
-#workspaces button.empty {
-    padding: 0px 10px;
-}
-#workspaces button:first-child {
-    margin-left: 0;
 }
 #workspaces button.active {
     background: @surface;
-
 }
 #workspaces button:hover {
     background: @surface;
@@ -80,9 +107,10 @@ tooltip {
 
 
 
+/* Pulse audio slider */
 #pulseaudio-slider {
-    padding: 2px 10px;
-    background: @bg; 
+    padding: 2px 2px;
+    background: @background; 
     border-radius: 15px;
 }
 #pulseaudio-slider slider {
@@ -98,17 +126,11 @@ tooltip {
     min-height: 5px;
     min-width: 80px;
     border-radius: 5px;
-    background-color: @bg;
+    background-color: @background;
 }
 #pulseaudio-slider highlight {
     min-width: 5px;
     border-radius: 5px;
     background: @primary;
-}
-
-@keyframes blink {
-    to {
-        background-color: #e64553;
-    }
 }
 
