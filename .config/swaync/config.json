@@ -14,7 +14,7 @@
   "control-center-width": 380,
   "control-center-height": 800,
   "keyboard-shortcuts": true,
-  "transition-time": 200,
+  "transition-time": 50,
   "hide-on-clear": false,
   "hide-on-action": true,
   "script-fail-notify": true,

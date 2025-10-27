@@ -1,7 +1,6 @@
 *{
-    background:     rgba(9, 24, 51, 0.65);
-    
-    foreground:     #9600ff;
-    input-background: #133e7c;
-    selected:       #133e7c;
+    background:     rgba(10, 13, 22, 0.65);         // background (#0a0d16)
+    foreground:     #a75fff;                        // primary
+    input-background: #141927;                      // surface
+    selected:       #141927;                        // surface
 }

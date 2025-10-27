@@ -1,50 +1,47 @@
 @import "/home/shinenolife/.config/themes/shine-theme.css";
 
-
 /* Config */
-
 * {
     font-family: "JetbrainsMono NFP SemiBold";
     font-style: italic;
 }
 
 /* Notification */
-
 .notification {
     background: @background;
     color: @primary;
-    border: 3px solid @bordercolor;
+    border: 3px solid @primary;
     border-radius: 10px;
-    padding:10px;
+    padding: 10px;
 }
 
 .body {
-  color: @primary;
+    color: @primary;
 }
 
 .summary {
-  font-size: 16px;
-  font-weight: 700;
-  background: transparent;
-  color: @secondary;
-  text-shadow: none;
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+    color: @primary;
+    text-shadow: none;
 }
 
 .time {
-  font-size: 16px;
-  font-weight: 700;
-  background: transparent;
-  color: @primary;
-  text-shadow: none;
-  margin-right: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+    color: @primary;
+    text-shadow: none;
+    margin-right: 18px;
 }
 
 .close-button {
-  background-color: @warning;
-  color: @secondary;
-  margin-top: 5px;
-  margin-right: 5px;
-  border-radius: 6px;
+    background-color: @warning;
+    color: @secondary;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 6px;
 }
 
 .notification-default-action:hover,
@@ -54,68 +51,66 @@
 }
 
 .notification.critical progress {
-  background-color: @warning;
+    background-color: @warning;
 }
 
 .notification.low progress,
 .notification.normal progress {
-  background-color: @secondary;
+    background-color: @secondary;
 }
 
 /* Control Center */
-
 .control-center {
     background-color: @background;
-    color: @fontcolor;
-    border: 3px solid @bordercolor;
+    color: @foreground;
+    border: 3px solid @primary;
     padding: 10px;
 }
 
 /* Notifications expanded-group */
-
 .notification-group {
-  background-color: transparent;
-  margin: 2px 8px 2px 8px;
-  font-size: 14px;
+    background-color: transparent;
+    margin: 2px 8px 2px 8px;
+    font-size: 14px;
 }
 
 .notification-group-icon {
-  color: @primary;
+    color: @primary;
 }
 
 .notification-group-headers {
-  color: @primary;
+    color: @primary;
 }
 
 .notification-group-collapse-button,
 .notification-group-close-all-button {
-  background: @secondary;
-  color: @secondary;
-  margin: 4px; 
-  border-radius: 6px;
-  padding: 4px;
+    background: @secondary;
+    color: @foreground;
+    margin: 4px;
+    border-radius: 6px;
+    padding: 4px;
 }
 
 .notification-group-collapse-button:hover,
 .notification-group-close-all-button:hover {
-  background: warning;
-  color: @secondary;
-}  
+    background: @warning;
+    color: @foreground;
+}
 
 /* widget title */
 .widget-title {
-  color: @primary;
+    color: @primary;
 }
-.widget-title>button {
-  font-size: 1rem;
-  color: @primary;
-  background: @surface;
-  box-shadow: none;
+.widget-title > button {
+    font-size: 1rem;
+    color: @primary;
+    background: @surface;
+    box-shadow: none;
 }
 
-.widget-title>button:hover {
-  background: warning;
-  color: @secondary;
+.widget-title > button:hover {
+    background: @warning;
+    color: @foreground;
 }
 
 /* widget button grid */
@@ -126,8 +121,8 @@ button {
 }
 
 .widget-buttons-grid {
-  font-size: x-large;
-  background: @surface;
+    font-size: x-large;
+    background: @surface;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
@@ -136,81 +131,79 @@ button {
     padding: 10px;
 }
 
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: color-mix(in srgb, @primary) 55%, transparent;
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: @highlight;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
-  background: @secondary;
+    background: @secondary;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
-    color: @secondary;
+    color: @foreground;
 }
 
 /* dnd widget */
 .widget-dnd {
-  background: transparent;
-  border: 1px solid transparent;
-  font-size: large;
-  color: @primary;
+    background: transparent;
+    border: 1px solid transparent;
+    font-size: large;
+    color: @primary;
 }
 
-.widget-dnd>label {
-  color: @primary;
+.widget-dnd > label {
+    color: @primary;
 }
 
-.widget-dnd>switch {
-  background: @background;
-  color: @primary;
-  border-radius: 6px;
+.widget-dnd > switch {
+    background: @background;
+    color: @primary;
+    border-radius: 6px;
 }
 
-.widget-dnd>switch:checked {
-  background: @warning;
-  border: 1px solid warning;
+.widget-dnd > switch:checked {
+    background: @warning;
+    border: 1px solid @warning;
 }
 
 /* volume & backlight widget */
-
 .widget-volume {
-  background: @surface;
-  color: @primary;
-  font-size: x-large;
+    background: @surface;
+    color: @primary;
+    font-size: x-large;
 }
 
 .widget-backlight {
-  background: @surface;
-  color: @primary;
-  font-size: x-large;
+    background: @surface;
+    color: @primary;
+    font-size: x-large;
 }
 
 /* music player widget */
 .widget-mpris {
-  background: transparent;
-  margin: 8px;
+    background: @surface;
+    margin: 8px;
 }
 
 .widget-mpris button {
-  background-color: transparent;
-  border-radius: 6px;
+    background-color: transparent;
+    border-radius: 6px;
 }
 
 .widget-mpris button:hover {
-  background-color: @secondary;
-  color: @secondary;
+    background-color: @primary;
+    color: @foreground;
 }
 
 /* sliders in backlight and volume */
-
 trough slider {
-    background: @primary;
-}
-
-trough slider:hover {
-    background: @secondary;
+    background: @highlight;
 }
 
 trough highlight {
-  background: @secondary;
+    background: @highlight;
+}
+
+trough slider:hover {
+    background: @primary;
 }
