@@ -187,6 +187,7 @@ button {
 
 .widget-mpris button {
     background-color: transparent;
+    color: @foreground;
     border-radius: 6px;
 }
 

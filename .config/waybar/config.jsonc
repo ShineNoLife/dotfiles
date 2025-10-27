@@ -9,6 +9,11 @@
     
     "custom/openbracket",
     "group/group-audio-display",
+    "custom/closebracket",
+
+
+    "custom/openbracket",
+    "tray",
     "custom/closebracket"
     // "privacy"
   ],
@@ -20,11 +25,11 @@
   ],
   "modules-right": [
     "custom/openbracket",
-    "group/group-audio-control",
+    "clock",
     "custom/closebracket",
 
     "custom/openbracket",
-    "tray",
+    "group/group-audio-control",
     "custom/closebracket",
     
     "custom/openbracket",
@@ -34,9 +39,9 @@
     "custom/closebracket",
 
     "custom/openbracket",
-    "power-profiles-daemon",
-    "custom/split",
     "battery",
+    "custom/split",
+    "power-profiles-daemon",
     "custom/closebracket",
     
     "custom/openbracket",
@@ -121,7 +126,7 @@
   },
   "clock": {
     "interval": 1,
-    "format": "{:%a %d %b 󰃭 | %H:%M }",
+    "format": "{:%H:%M | %a | %d %b}",
     "tooltip": true,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
