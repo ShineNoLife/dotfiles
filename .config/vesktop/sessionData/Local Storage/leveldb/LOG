@@ -1,5 +1,0 @@
-2025/12/31-23:53:49.526 2bef Creating DB /home/shinenolife/.config/vesktop/sessionData/Local Storage/leveldb since it was missing.
-2025/12/31-23:53:49.552 2bef Reusing MANIFEST /home/shinenolife/.config/vesktop/sessionData/Local Storage/leveldb/MANIFEST-000001
-2025/12/31-23:57:04.076 2bbe Level-0 table #5: started
-2025/12/31-23:57:04.082 2bbe Level-0 table #5: 48448 bytes OK
-2025/12/31-23:57:04.089 2bbe Delete type=0 #3
