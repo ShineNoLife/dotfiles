@@ -273,7 +273,7 @@
         "bar_delimiter": 0,
         "monstercat": false,
         "waves": false,
-        "noise_reduction": 0.6,
+        "noise_reduction": 0.25,
         "input_delay": 2,
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
         "actions": {
