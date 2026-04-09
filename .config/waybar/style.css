@@ -74,9 +74,9 @@ tooltip {
     color: @primary;
 }
 #workspaces button.active {
-    background: @surface;
+    color: @accent;
 }
 #workspaces button:hover {
-    background: @surface;
+    color: @accent;
 }
 

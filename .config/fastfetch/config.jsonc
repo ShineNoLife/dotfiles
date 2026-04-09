@@ -10,12 +10,12 @@
         //    "4": "blue",
         //    "5": "green"
         //}
-        "source": "~/.config/fastfetch/ascii/main.txt",
+        //"source": "~/.config/fastfetch/ascii/main.txt",
         // "type": "kitty",
         // "height": 16,
         // "width": 20,
         "padding": {
-            "top": 4,
+            "top": 0,
            "left": 7,
            "right": 7
         }

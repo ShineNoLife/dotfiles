@@ -1,8 +1,9 @@
-@define-color background #0a0d16;
-@define-color surface #141927;
+@define-color background #1E2326;
+
 @define-color foreground #cbd3e0;
-@define-color primary #a75fff;   /* purple core */
-@define-color secondary #00b8d4; /* teal glow */
-@define-color highlight #ff9ed3; /* soft pink highlight */
-@define-color warning #ff4d6d;   /* warm red */
+@define-color primary #6F8A52;   /* purple core */
+@define-color secondary #6E9E97; /* teal glow */
+@define-color highlight #D6E2B8; /* soft pink highlight */
+@define-color accent #8C6746;
+
 @define-color inactive #40475a;  /* steel gray */

@@ -1,6 +1,6 @@
 *{
-    background:     rgba(10, 13, 22, 0.65);         // background (#0a0d16)
-    foreground:     #a75fff;                        // primary
-    input-background: #141927;                      // surface
-    selected:       #141927;                        // surface
+    background:       rgba(30, 35, 38, 0.72);   // background (#1E2326)
+    foreground:       #D6E2B8;                  // highlight
+    input-background: #2A3135;                  // surface
+    selected:         #6F8A52;                  // accent
 }
