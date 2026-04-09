@@ -31,9 +31,6 @@ tooltip {
     border: 1.5px solid @primary;
     color: @primary;
 }
-.modules-right > * {
-    padding: 0px 8px 0px 8px;
-}
 .modules-left {
     background: @background; 
     margin: 4px 4px 4px 4px;
@@ -42,21 +39,12 @@ tooltip {
     border: 1.5px solid @primary;
     color: @primary;
 }
-.modules-center {
-    background: @background; 
-    margin: 4px 4px 4px 4px;
-    border-radius: 5px; /*Default 5*/
-    border: 1.5px solid @primary;
-    color: @primary;
-}
-
 
 
 /* Modules padding */
 #workspaces,
 #group-power,
 #group-audio-control,
-#group-audio-display,
 #mpris,
 #privacy-item,
 #clock,
@@ -68,7 +56,7 @@ tooltip {
 #battery,
 #custom-split,
 #custom-updates { 
-    margin: 0px 2px 0px 2px;
+    margin: 0px 3px 0px 3px;
 }
 
 #custom-openbracket {
@@ -81,18 +69,6 @@ tooltip {
 }
 
 
-
-/* Other modules stuff */
-#cava {
-    color: @highlight;
-}
-#privacy-item {
-    background: @warning;
-    color: #15161e;
-}
-
-
-
 /* Worspace buttons */
 #workspaces button {
     color: @primary;
@@ -102,35 +78,5 @@ tooltip {
 }
 #workspaces button:hover {
     background: @surface;
-}
-
-
-
-
-/* Pulse audio slider */
-#pulseaudio-slider {
-    padding: 2px 2px;
-    background: @background; 
-    border-radius: 15px;
-}
-#pulseaudio-slider slider {
-    min-height: 0px;
-    min-width: 0px;
-    opacity: 0;
-    background-image: none;
-    border: none;
-    box-shadow: none;
-    background: @primary;
-}
-#pulseaudio-slider trough {
-    min-height: 5px;
-    min-width: 80px;
-    border-radius: 5px;
-    background-color: @background;
-}
-#pulseaudio-slider highlight {
-    min-width: 5px;
-    border-radius: 5px;
-    background: @primary;
 }
 

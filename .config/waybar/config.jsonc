@@ -8,21 +8,19 @@
     "custom/closebracket",
     
     "custom/openbracket",
-    "group/group-audio-display",
-    "custom/closebracket",
-
-
-    "custom/openbracket",
     "tray",
-    "custom/closebracket"
-    // "privacy"
-  ],
-  "modules-center": [
+    "custom/closebracket",
+    
     "custom/openbracket",
     "hyprland/workspaces",
     "custom/closebracket"
-    // "mpris"
   ],
+  // "modules-center": [
+  //   "custom/openbracket",
+  //   "hyprland/workspaces",
+  //   "custom/closebracket"
+  //
+  // ],
   "modules-right": [
     "custom/openbracket",
     "clock",
@@ -99,7 +97,7 @@
     "player-icons": {
       "default": "󰎈",
       "mpv": "",
-      "spotify": "<span color='#0abdc6'></span>",
+      "spotify": "<span color='#0abdc6'></span>"
     },
     "status-icons": {
       "paused": "⏸",
@@ -107,26 +105,9 @@
       "stopped": ""
     }
   },
-  "privacy": {
-    "icon-spacing": 4,
-    "icon-size": 12,
-    "transition-duration": 250,
-    "modules": [
-      {
-        "type": "screenshare",
-        "tooltip": true,
-        "tooltip-icon-size": 12
-      },
-      {
-        "type": "audio-in",
-        "tooltip": true,
-        "tooltip-icon-size": 12
-      }
-    ]
-  },
   "clock": {
     "interval": 1,
-    "format": "{:%H:%M | %a | %d %b}",
+    "format": "{:%H:%M | %A, %B %d}",
     "tooltip": true,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -208,13 +189,6 @@
       "tooltip": true,
       "tooltip-format": "Power off system",
       "on-click": "shutdown now"
-  },
-  "group/group-audio-display": {
-    "orientation": "inherit",
-    "modules": [
-      "cava"
-        // "pulseaudio/slider"
-    ]
   },
   "group/group-audio-control": {
     "orientation": "inherit",
