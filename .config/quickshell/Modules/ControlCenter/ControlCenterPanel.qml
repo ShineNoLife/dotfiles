@@ -9,8 +9,6 @@ Rectangle {
     height: Core.Theme.controlCenterPanelHeight
     radius: Core.Theme.radius
     color: Core.Theme.bg
-    border.color: Core.Theme.border
-    border.width: 1
 
     anchors {
         top: parent.top
@@ -98,7 +96,7 @@ Rectangle {
 
                     border.color: Core.Theme.border
                     border.width: 2
-                    
+
                     Text {
                         anchors.centerIn: parent
                         color: Core.Theme.fg
