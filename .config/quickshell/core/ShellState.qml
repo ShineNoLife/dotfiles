@@ -8,11 +8,35 @@ import Quickshell.Hyprland
 Singleton {
     id: root
 
-    // Panel state
-    property bool overlayOpen: false
+    // Panel registry
+    property var openPanels: ({})
+    property var panelOrder: []
+    readonly property bool overlayOpen: panelOrder.length > 0
 
-    function toggleOverlay() {
-        overlayOpen = !overlayOpen
+    function openPanel(name) {
+        if (openPanels[name]) return
+        let p = Object.assign({}, openPanels)
+        p[name] = true
+        openPanels = p
+        panelOrder = panelOrder.concat(name)
+    }
+
+    function closePanel(name) {
+        if (!openPanels[name]) return
+        let p = Object.assign({}, openPanels)
+        delete p[name]
+        openPanels = p
+        panelOrder = panelOrder.filter(n => n !== name)
+    }
+
+    function togglePanel(name) {
+        if (openPanels[name]) closePanel(name)
+        else openPanel(name)
+    }
+
+    function closeAllPanels() {
+        openPanels = {}
+        panelOrder = []
     }
 
     // System info
@@ -53,7 +77,6 @@ Singleton {
                 root.lastCpuIdle = idleTime
             }
         }
-        Component.onCompleted: running = true
     }
 
     Process {
@@ -67,7 +90,6 @@ Singleton {
                 root.memUsage = used / 1048576
             }
         }
-        Component.onCompleted: running = true
     }
 
     Process {
@@ -80,7 +102,6 @@ Singleton {
                 if (match) root.volumeLevel = Math.round(parseFloat(match[1]) * 100)
             }
         }
-        Component.onCompleted: running = true
     }
 
     Process {
@@ -91,8 +112,34 @@ Singleton {
                 if (data && data.trim()) root.activeWindow = data.trim()
             }
         }
-        Component.onCompleted: running = true
     }
+
+    Process { 
+        id: lockProc 
+        command: ["hyprlock"]
+    }
+    Process { 
+        id: rebootProc
+        command: ["reboot"]
+    }
+    Process { 
+        id: shutdownProc
+        command: ["shutdown", "now"]
+    }
+
+    // functions
+    function lock() {
+        lockProc.running = true
+    }
+
+    function reboot() {
+        rebootProc.running = true
+    }
+
+    function shutdown() {
+        shutdownProc.running = true
+    }
+
 
     // ── Timers ──
 
@@ -119,5 +166,12 @@ Singleton {
         function onRawEvent(event) {
             windowProc.running = true
         }
+    }
+
+    // global shortcuts, change in hyprland's keybinds.conf
+
+    GlobalShortcut {
+        name: "overlay"
+        onPressed: root.togglePanel("controlcenter")
     }
 }

@@ -17,6 +17,6 @@ Text {
         running: true
         repeat: true
         triggeredOnStart: true
-        onTriggered: root.timeStr = Qt.formatTime(new Date(), "hh:mm")
+        onTriggered: root.timeStr = Qt.formatDateTime(new Date(), "hh:mm dddd, MMMM d")
     }
 }

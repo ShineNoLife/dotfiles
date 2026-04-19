@@ -3,4 +3,4 @@ Workspaces 1.0 Workspaces.qml
 ActiveWindowTitle 1.0 ActiveWindowTitle.qml
 BarClock 1.0 BarClock.qml
 VolumeIndicator 1.0 VolumeIndicator.qml
-SettingsButton 1.0 SettingsButton.qml
+ControlCenterButton 1.0 ControlCenterButton.qml

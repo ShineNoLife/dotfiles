@@ -1,16 +1,15 @@
 import QtQuick
 import "../core" as Core
 
-Rectangle {
+Item {
     id: root
 
     width: Core.Theme.barHeight
     height: Core.Theme.barHeight
-    color: "transparent"
-
+    
     Text {
         text: "⚙"
-        color: Core.ShellState.overlayOpen ? Core.Theme.orange : Core.Theme.fg
+        color: Core.ShellState.openPanels["controlcenter"] ? Core.Theme.orange : Core.Theme.fg
         font.pixelSize: Core.Theme.fontSize
         font.family: Core.Theme.fontFamily
         anchors.centerIn: parent
@@ -18,6 +17,6 @@ Rectangle {
 
     MouseArea {
         anchors.fill: parent
-        onClicked: Core.ShellState.toggleOverlay()
+        onClicked: Core.ShellState.togglePanel("controlcenter")
     }
 }

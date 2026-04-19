@@ -10,11 +10,10 @@ RowLayout {
     Repeater {
         model: 10
 
-        Rectangle {
+        Item {
             Layout.preferredWidth: 20
             Layout.preferredHeight: Core.Theme.barHeight
-            color: "transparent"
-
+            
             required property int index
 
             property var workspace: Hyprland.workspaces.values.find(ws => ws.id === index + 1) ?? null

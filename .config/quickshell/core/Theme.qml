@@ -10,9 +10,9 @@ Singleton {
     readonly property color bg: "#1E2326"
     readonly property color surface: "#272E33"
     readonly property color border: "#374145"
-    readonly property color scrim: "#AA000000"
+    readonly property color dim: "#33000000"
     readonly property color fg: "#D3C6AA"
-    readonly property color textDim: "#859289"
+    readonly property color textMuted: "#859289"
     readonly property color green: "#A7C080"
     readonly property color blue: "#7FBBB3"
     readonly property color orange: "#E69875"
@@ -30,4 +30,8 @@ Singleton {
     readonly property int marginS: 4
     readonly property int marginM: 8
     readonly property int marginL: 16
+
+    // control center panel layout
+    readonly property int controlCenterPanelWidth: 360
+    readonly property int controlCenterPanelHeight: 360
 }
