@@ -1,0 +1,3 @@
+module windows
+BarSurface 1.0 BarSurface.qml
+OverlaySurface 1.0 OverlaySurface.qml
