@@ -35,7 +35,7 @@ Singleton {
     readonly property string trackArtUrl: currentPlayer ? (currentPlayer.trackArtUrl || "") : ""
     readonly property real trackLength: currentPlayer ? (currentPlayer.length || 0) : 0
     readonly property real trackPosition: currentPlayer ? (currentPlayer.position || 0) : 0
-    
+
     // Playback state
     readonly property bool isPlaying: currentPlayer ? currentPlayer.playbackState === MprisPlaybackState.Playing : false
     readonly property bool canPlay: currentPlayer ? currentPlayer.canPlay : false
@@ -51,6 +51,14 @@ Singleton {
         if (trackArtist == "" || trackAlbum == "") return trackArtist
 
         return trackArtist + " [" + trackAlbum + "]"
+    }
+
+    
+    // Per-player volume (0.0–1.0)
+    readonly property real volume: currentPlayer ? (currentPlayer.volume || 0) : 0
+
+    function setVolume(val) {
+        if (currentPlayer) currentPlayer.volume = Math.max(0, Math.min(1.0, val))
     }
 
     // Controls

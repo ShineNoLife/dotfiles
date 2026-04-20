@@ -4,3 +4,6 @@ ActiveWindowTitle 1.0 ActiveWindowTitle.qml
 BarClock 1.0 BarClock.qml
 VolumeIndicator 1.0 VolumeIndicator.qml
 ControlCenterButton 1.0 ControlCenterButton.qml
+ControlCenterProfile 1.0 ControlCenterProfile.qml
+ControlCenterStatistics 1.0 ControlCenterStatistics.qml
+ControlCenterMediaPlayer 1.0 ControlCenterMediaPlayer.qml

@@ -5,14 +5,14 @@ import Quickshell
 
 Singleton {
     id: root
-    
+
     // Everforest Dark palette
     readonly property color bg: "#1E2326"
     readonly property color surface: "#272E33"
-    readonly property color border: "#374145"
+    readonly property color border: "#4A555B"
     readonly property color dim: "#0D000000"
     readonly property color fg: "#D3C6AA"
-    readonly property color textMuted: "#859289"
+    readonly property color textMuted: "#9DA9A0"
     readonly property color green: "#A7C080"
     readonly property color blue: "#7FBBB3"
     readonly property color orange: "#E69875"
@@ -34,4 +34,6 @@ Singleton {
     // control center panel layout
     readonly property int controlCenterPanelWidth: 360
     readonly property int controlCenterPanelHeight: 540
+
+    readonly property int borderWidth: 1
 }
