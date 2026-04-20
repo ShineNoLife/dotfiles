@@ -5,7 +5,7 @@ import Quickshell
 
 Singleton {
     id: root
-
+    
     // Everforest Dark palette
     readonly property color bg: "#1E2326"
     readonly property color surface: "#272E33"

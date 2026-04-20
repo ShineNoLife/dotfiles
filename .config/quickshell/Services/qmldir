@@ -1,0 +1,3 @@
+singleton MediaService 1.0 MediaService.qml
+singleton AudioService 1.0 AudioService.qml
+singleton SpectrumService 1.0 SpectrumService.qml

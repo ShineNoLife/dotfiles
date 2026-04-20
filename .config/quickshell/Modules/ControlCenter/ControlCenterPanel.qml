@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import "../../core" as Core
+import "../../Services" as Services
 
 Rectangle {
     id: controlCenterPanel
@@ -40,6 +41,7 @@ Rectangle {
             RowLayout {
                 anchors.fill: parent
                 anchors.margins: Core.Theme.marginM
+                Layout.alignment: AlignHCenter
 
                 // profile
                 Rectangle {
@@ -199,7 +201,147 @@ Rectangle {
             }
 
         }
-        
+
+        // ── Media Player ──
+        Rectangle {
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            height: 200
+            color: Core.Theme.surface
+            radius: Core.Theme.radius
+            
+            ColumnLayout {
+                anchors.fill: parent
+                anchors.margins: Core.Theme.marginM
+                spacing: 4
+
+                // Track info
+                Text {
+                    Layout.fillWidth: true
+                    text: Services.MediaService.trackTitle || "~"
+                    color: Core.Theme.fg
+                    font.pixelSize: Core.Theme.fontSize + 4
+                    font.family: Core.Theme.fontFamily
+                    font.bold: true
+                    elide: Text.ElideRight
+                }
+
+                Text {
+                    Layout.fillWidth: true
+                    text: (Services.MediaService.trackArtistDense || "")
+                    color: Core.Theme.textMuted
+                    font.pixelSize: Core.Theme.fontSize
+                    font.family: Core.Theme.fontFamily
+                    elide: Text.ElideRight
+                    visible: text !== ""
+                }
+
+                Item { Layout.fillHeight: true }
+
+                // Controls row
+                RowLayout {
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                    spacing: Core.Theme.marginL
+
+                    // Shuffle
+                    Text {
+                        text: "󰒝"
+                        color: Services.MediaService.shuffle ? Core.Theme.green : Core.Theme.textMuted
+                        font.pixelSize: Core.Theme.fontSize
+                        font.family: Core.Theme.fontFamily
+                        MouseArea {
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: Services.MediaService.toggleShuffle()
+                        }
+                    }
+
+                    // Previous
+                    Text {
+                        text: "󰒮"
+                        color: Services.MediaService.canGoPrevious ? Core.Theme.fg : Core.Theme.textMuted
+                        font.pixelSize: Core.Theme.fontSize + 4
+                        font.family: Core.Theme.fontFamily
+                        MouseArea {
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: Services.MediaService.previous()
+                        }
+                    }
+
+                    // Play/Pause
+                    Text {
+                        text: Services.MediaService.isPlaying ? "󰏤" : "󰐊"
+                        color: Core.Theme.green
+                        font.pixelSize: Core.Theme.fontSize + 8
+                        font.family: Core.Theme.fontFamily
+                        MouseArea {
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: Services.MediaService.playPause()
+                        }
+                    }
+
+                    // Next
+                    Text {
+                        text: "󰒭"
+                        color: Services.MediaService.canGoNext ? Core.Theme.fg : Core.Theme.textMuted
+                        font.pixelSize: Core.Theme.fontSize + 4
+                        font.family: Core.Theme.fontFamily
+                        MouseArea {
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: Services.MediaService.next()
+                        }
+                    }
+
+                    // Loop
+                    Text {
+                        text: {
+                            switch (Services.MediaService.loopState) {
+                                case 2: return "󰑘"  // Track
+                                case 1: return "󰑖"  // Playlist
+                                default: return "󰑗" // None
+                            }
+                        }
+                        color: Services.MediaService.loopState !== 0 ? Core.Theme.green : Core.Theme.textMuted
+                        font.pixelSize: Core.Theme.fontSize
+                        font.family: Core.Theme.fontFamily
+                        MouseArea {
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: Services.MediaService.cycleLoop()
+                        }
+                    }
+                }
+
+                RowLayout {
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignHCenter
+                    
+                    Rectangle {
+                        height: 20
+                        width: 60
+                        color: Core.Theme.surface
+                        radius: Core.Theme.radius
+
+                        border.color: Core.Theme.border
+                        border.width: 2
+
+                        MouseArea {
+                            anchors.fill: parent
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: Services.MediaService.switchPlayer()
+                        }
+                    }
+                }
+
+            }
+        }
+
         Item { Layout.fillHeight: true }
     }
     
