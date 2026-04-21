@@ -15,10 +15,6 @@ Rectangle {
     anchors {
         top: parent.top
         right: parent.right
-        // bottom: parent.bottom
-        // topMargin: Core.Theme.marginM
-        // rightMargin: Core.Theme.marginM
-        // bottomMargin: Core.Theme.marginM
     }
 
     // Block dim click-through
@@ -37,6 +33,9 @@ Rectangle {
 
         // ── Media Player ──
         Widgets.ControlCenterMediaPlayer { }
+
+        
+        Widgets.ControlCenterNetworkManager { }
 
         Item { Layout.fillHeight: true }
     }

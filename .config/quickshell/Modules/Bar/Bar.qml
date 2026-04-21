@@ -37,12 +37,26 @@ RowLayout {
     }
 
     // Active window title
-    Widgets.ActiveWindowTitle {
+    Widgets.BarActiveWindow {
         Layout.fillWidth: true
     }
 
     // Clock
     Widgets.BarClock {
+        Layout.rightMargin: Core.Theme.marginM
+    }
+    
+    // Separator
+    Rectangle {
+        Layout.preferredWidth: 2
+        Layout.preferredHeight: 16
+        Layout.alignment: Qt.AlignVCenter
+        Layout.rightMargin: Core.Theme.marginM
+        color: Core.Theme.border
+    }
+
+    // Clock
+    Widgets.BarBattery {
         Layout.rightMargin: Core.Theme.marginM
     }
     

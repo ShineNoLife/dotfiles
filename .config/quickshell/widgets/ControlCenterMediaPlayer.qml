@@ -48,12 +48,12 @@ ClippingRectangle {
                 color: Core.Theme.green
 
                 Behavior on height {
-                    NumberAnimation { duration: 50; easing.type: Easing.OutQuad }
+                    NumberAnimation { duration: 16; easing.type: Easing.OutQuad }
                 }
             }
         }
     }
-
+    
     Component.onCompleted: Services.SpectrumService.registerComponent("mediaplayer")
     Component.onDestruction: Services.SpectrumService.unregisterComponent("mediaplayer")
 
@@ -84,6 +84,24 @@ ClippingRectangle {
         }
 
         Item { Layout.fillHeight: true }
+
+        // Fallback when no art / no track
+        Rectangle {
+            anchors.centerIn: parent
+            width: 80
+            height: 80
+            radius: Core.Theme.radius
+            color: Core.Theme.border
+            visible: !Services.MediaService.trackTitle
+
+            Text {
+                anchors.centerIn: parent
+                text: "󰎈"
+                color: Core.Theme.textMuted
+                font.pixelSize: 36
+                font.family: Core.Theme.fontFamily
+            }
+        }
 
         // Volume slider
         RowLayout {

@@ -20,11 +20,17 @@ Singleton {
     function registerComponent(componentId) {
         root._registeredComponents[componentId] = true
         root._registeredComponents = Object.assign({}, root._registeredComponents)
+        if (!cavaProc.running) cavaProc.running = true
     }
 
     function unregisterComponent(componentId) {
         delete root._registeredComponents[componentId]
         root._registeredComponents = Object.assign({}, root._registeredComponents)
+        if (root._registeredCount === 0) {
+            cavaProc.running = false
+            root.values = []
+            root.isIdle = true
+        }
     }
 
     on_ShouldRunChanged: {
@@ -37,22 +43,12 @@ Singleton {
         }
     }
 
-    // cava outputs ascii values (0–1000) separated by semicolons
+    // cava outputs ascii values (0–1000) separated by semicolons, one frame per line
+    // stdbuf -oL forces line-buffered stdout so frames arrive immediately
     Process {
         id: cavaProc
         running: false
-        command: ["sh", "-c", [
-            "cava -p /dev/stdin <<'EOF'",
-            "[general]",
-            "bars = " + root.bandCount,
-            "framerate = 30",
-            "[output]",
-            "method = raw",
-            "raw_target = /dev/stdout",
-            "data_format = ascii",
-            "ascii_max_range = 1000",
-            "EOF"
-        ].join("\n")]
+        command: ["stdbuf", "-oL", "cava", "-p", Quickshell.shellDir + "/cava-spectrum.conf"]
 
         stdout: SplitParser {
             onRead: data => {

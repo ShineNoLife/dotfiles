@@ -33,7 +33,7 @@ Singleton {
 
     // control center panel layout
     readonly property int controlCenterPanelWidth: 360
-    readonly property int controlCenterPanelHeight: 540
+    readonly property int controlCenterPanelHeight: 720
 
     readonly property int borderWidth: 1
 }

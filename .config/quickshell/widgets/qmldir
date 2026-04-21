@@ -1,9 +1,11 @@
 module widgets
 Workspaces 1.0 Workspaces.qml
-ActiveWindowTitle 1.0 ActiveWindowTitle.qml
+BarActiveWindow 1.0 BarActiveWindow.qml
 BarClock 1.0 BarClock.qml
 VolumeIndicator 1.0 VolumeIndicator.qml
 ControlCenterButton 1.0 ControlCenterButton.qml
 ControlCenterProfile 1.0 ControlCenterProfile.qml
 ControlCenterStatistics 1.0 ControlCenterStatistics.qml
 ControlCenterMediaPlayer 1.0 ControlCenterMediaPlayer.qml
+ControlCenterNetworkManager 1.0 ControlCenterNetworkManager.qml
+BarBattery 1.0 BarBattery.qml
