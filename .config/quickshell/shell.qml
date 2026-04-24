@@ -12,7 +12,7 @@ ShellRoot {
             screen: modelData
         }
     }
-
+    
     Variants {
         model: Quickshell.screens
 

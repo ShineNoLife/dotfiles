@@ -44,6 +44,34 @@ Rectangle {
 
         Item { Layout.fillWidth: true }
 
+        // reload
+        Rectangle {
+            anchors {
+                top: parent.top
+                bottom: parent.bottom
+            }
+            width: height
+            color: Core.Theme.surface
+            radius: width/2
+
+            border.color: Core.Theme.border
+            border.width: 2
+
+            Text {
+                anchors.centerIn: parent
+                color: Core.Theme.blue
+                text: "󰑓"
+                font.family: Core.Theme.fontFamily
+                font.pixelSize: Core.Theme.fontSize
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: Quickshell.reload(false)
+            }
+        }
+
         // lock
         Rectangle {
             anchors {

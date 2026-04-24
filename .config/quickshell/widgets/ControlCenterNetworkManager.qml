@@ -15,7 +15,7 @@ Rectangle {
 
     border.color: Core.Theme.border
     border.width: 1
-
+    
     id: root
 
     // ── State ──
