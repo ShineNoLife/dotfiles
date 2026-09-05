@@ -17,6 +17,10 @@ Singleton {
     readonly property real inputVolume: source && source.audio ? source.audio.volume : 0
     readonly property bool inputMuted: source && source.audio ? source.audio.muted : true
 
+    PwObjectTracker {
+        objects: [root.sink, root.source]
+    }
+
     // Convenience percentage (0-100)
     readonly property int volumePercent: Math.round(volume * 100)
     readonly property int inputVolumePercent: Math.round(inputVolume * 100)

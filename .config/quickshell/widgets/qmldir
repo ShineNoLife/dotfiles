@@ -9,3 +9,4 @@ ControlCenterStatistics 1.0 ControlCenterStatistics.qml
 ControlCenterMediaPlayer 1.0 ControlCenterMediaPlayer.qml
 ControlCenterNetworkManager 1.0 ControlCenterNetworkManager.qml
 BarBattery 1.0 BarBattery.qml
+ControlCenterBrightness 1.0 ControlCenterBrightness.qml

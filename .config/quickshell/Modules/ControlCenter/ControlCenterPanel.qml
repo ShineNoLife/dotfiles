@@ -31,6 +31,8 @@ Rectangle {
         // performance statistics
         Widgets.ControlCenterStatistics { }
 
+        Widgets.ControlCenterBrightness { }
+
         // ── Media Player ──
         Widgets.ControlCenterMediaPlayer { }
 
