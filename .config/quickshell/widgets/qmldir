@@ -10,3 +10,4 @@ ControlCenterMediaPlayer 1.0 ControlCenterMediaPlayer.qml
 ControlCenterNetworkManager 1.0 ControlCenterNetworkManager.qml
 BarBattery 1.0 BarBattery.qml
 ControlCenterBrightness 1.0 ControlCenterBrightness.qml
+ControlCenterButtons 1.0 ControlCenterButtons.qml

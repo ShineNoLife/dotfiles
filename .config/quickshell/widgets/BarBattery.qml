@@ -11,7 +11,6 @@ Item {
     // Battery state
     property int capacity: 100
     property string status: "Unknown"   // "Charging", "Discharging", "Full", "Unknown"
-    property string governor: "powersave" // "powersave" or "performance"
 
     readonly property bool isCharging: status === "Charging" || status === "Full"
 
@@ -32,9 +31,6 @@ Item {
         return Core.Theme.fg
     }
 
-    readonly property string governorIcon: governor === "performance" ? "󱐋" : "󰌪"
-    readonly property color governorColor: governor === "performance" ? Core.Theme.orange : Core.Theme.blue
-
     // ── Processes ──
 
     Process {
@@ -53,21 +49,6 @@ Item {
         }
     }
 
-    Process {
-        id: governorProc
-        command: ["cat", "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor"]
-        stdout: SplitParser {
-            onRead: data => {
-                if (data && data.trim()) root.governor = data.trim()
-            }
-        }
-    }
-
-    Process {
-        id: setGovernorProc
-        running: false
-    }
-
     Timer {
         interval: 30000
         running: true
@@ -75,17 +56,7 @@ Item {
         triggeredOnStart: true
         onTriggered: {
             batteryProc.running = true
-            governorProc.running = true
         }
-    }
-
-    function toggleGovernor() {
-        var next = governor === "powersave" ? "performance" : "powersave"
-        setGovernorProc.command = ["sh", "-c",
-            "for f in /sys/devices/system/cpu/cpufreq/policy*/scaling_governor; do echo " + next + " | sudo tee $f > /dev/null; done"
-        ]
-        setGovernorProc.running = true
-        governor = next
     }
 
     // ── UI ──
@@ -93,14 +64,6 @@ Item {
     Row {
         id: row
         spacing: Core.Theme.marginS
-
-        Text {
-            anchors.verticalCenter: parent.verticalCenter
-            text: "[" + root.governorIcon + "]"
-            color: root.governorColor
-            font.pixelSize: Core.Theme.fontSize
-            font.family: Core.Theme.fontFamily
-        }
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
@@ -112,9 +75,4 @@ Item {
         }
     }
 
-    MouseArea {
-        anchors.fill: parent
-        cursorShape: Qt.PointingHandCursor
-        onClicked: root.toggleGovernor()
-    }
 }

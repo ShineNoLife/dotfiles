@@ -140,6 +140,5 @@ source $ZSH/oh-my-zsh.sh
 
 
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-  exec Hyprland
+  exec bash "$HOME/dotfiles/scripts/start-hyprland.sh"
 fi
-

@@ -5,11 +5,8 @@ import Quickshell.Io
 import "../core" as Core
 
 Rectangle {
-    anchors {
-        left: parent.left
-        right: parent.right
-    }
-    height: contentCol.implicitHeight + Core.Theme.marginL * 2
+    Layout.fillWidth: true
+    implicitHeight: contentCol.implicitHeight + Core.Theme.marginL * 2
     color: Core.Theme.surface
     radius: Core.Theme.radius
 
@@ -219,8 +216,8 @@ Rectangle {
 
             // Toggle wifi on/off
             Rectangle {
-                width: 32
-                height: 16
+                implicitWidth: 32
+                implicitHeight: 16
                 radius: Core.Theme.radius
                 color: root.wifiEnabled
                     ? Qt.rgba(Qt.color(Core.Theme.green).r, Qt.color(Core.Theme.green).g, Qt.color(Core.Theme.green).b, 0.15)
@@ -257,15 +254,19 @@ Rectangle {
 
         // Network list
         ScrollView {
+            id: networkList
             Layout.fillWidth: true
-            Layout.preferredHeight: Math.min(contentHeight, 100)
+            Layout.preferredHeight: Math.min(networkColumn.implicitHeight, 100)
+            contentWidth: availableWidth
+            contentHeight: networkColumn.implicitHeight
             visible: root.showNetworks && root.networks.length > 0
             clip: true
             ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
             ScrollBar.vertical.policy: ScrollBar.AsNeeded
 
             ColumnLayout {
-                width: parent.width
+                id: networkColumn
+                width: networkList.availableWidth
                 spacing: 2
 
                 Repeater {
@@ -274,7 +275,7 @@ Rectangle {
                     Rectangle {
                         required property var modelData
                         Layout.fillWidth: true
-                        height: 28
+                        implicitHeight: 28
                         radius: Core.Theme.radius / 2
 
                         readonly property bool isConnecting: root.connectingSSID === modelData.ssid

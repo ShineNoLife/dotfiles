@@ -3,11 +3,8 @@ import QtQuick.Layouts
 import "../core" as Core 
 
 Rectangle {
-    anchors {
-        left: parent.left
-        right: parent.right
-    }
-    height: 30
+    Layout.fillWidth: true
+    implicitHeight: 30
     color: Core.Theme.surface
     radius: Core.Theme.radius
 
@@ -18,7 +15,7 @@ Rectangle {
         anchors.fill: parent
         anchors.margins: Core.Theme.marginM
         columns: 3
-
+        
         // ── CPU ──
         Item {
             Layout.fillWidth: true

@@ -8,10 +8,10 @@ Item {
     height: Core.Theme.barHeight
     
     Text {
-        text: "⚙"
+        text: "\uf013" // Nerd Font: settings
         color: Core.ShellState.openPanels["controlcenter"] ? Core.Theme.orange : Core.Theme.fg
         font.pixelSize: Core.Theme.fontSize
-        font.family: Core.Theme.fontFamily
+        font.family: Core.Theme.iconFontFamily
         anchors.centerIn: parent
     }
 

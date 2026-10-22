@@ -6,11 +6,8 @@ import "../core" as Core
 import "../Services" as Services
 
 ClippingRectangle {
-    anchors {
-        left: parent.left
-        right: parent.right
-    }
-    height: 300
+    Layout.fillWidth: true
+    implicitHeight: 300
     color: Core.Theme.surface
     radius: Core.Theme.radius
 
@@ -54,8 +51,6 @@ ClippingRectangle {
         }
     }
     
-    Component.onCompleted: Services.SpectrumService.registerComponent("mediaplayer")
-    Component.onDestruction: Services.SpectrumService.unregisterComponent("mediaplayer")
 
     ColumnLayout {
         anchors.fill: parent
@@ -87,9 +82,9 @@ ClippingRectangle {
 
         // Fallback when no art / no track
         Rectangle {
-            anchors.centerIn: parent
-            width: 80
-            height: 80
+            Layout.alignment: Qt.AlignHCenter
+            implicitWidth: 80
+            implicitHeight: 80
             radius: Core.Theme.radius
             color: Core.Theme.border
             visible: !Services.MediaService.trackTitle

@@ -3,6 +3,7 @@ pragma Singleton
 import QtQuick
 import Quickshell
 import Quickshell.Io
+import "../core" as Core
 
 Singleton {
     id: root
@@ -12,32 +13,13 @@ Singleton {
     property bool isIdle: true
     readonly property int bandCount: 32
 
-    // Component registration (only run cava when something needs it)
-    property var _registeredComponents: ({})
-    readonly property int _registeredCount: Object.keys(_registeredComponents).length
-    readonly property bool _shouldRun: _registeredCount > 0
+    // Panel windows stay instantiated when hidden. Follow open/close state
+    // instead of widget construction, with one shared process for all screens.
+    readonly property bool active: !!Core.ShellState.openPanels["controlcenter"]
+    readonly property bool running: cavaProc.running
 
-    function registerComponent(componentId) {
-        root._registeredComponents[componentId] = true
-        root._registeredComponents = Object.assign({}, root._registeredComponents)
-        if (!cavaProc.running) cavaProc.running = true
-    }
-
-    function unregisterComponent(componentId) {
-        delete root._registeredComponents[componentId]
-        root._registeredComponents = Object.assign({}, root._registeredComponents)
-        if (root._registeredCount === 0) {
-            cavaProc.running = false
-            root.values = []
-            root.isIdle = true
-        }
-    }
-
-    on_ShouldRunChanged: {
-        if (_shouldRun) {
-            cavaProc.running = true
-        } else {
-            cavaProc.running = false
+    onActiveChanged: {
+        if (!active) {
             root.values = []
             root.isIdle = true
         }
@@ -47,12 +29,12 @@ Singleton {
     // stdbuf -oL forces line-buffered stdout so frames arrive immediately
     Process {
         id: cavaProc
-        running: false
+        running: root.active
         command: ["stdbuf", "-oL", "cava", "-p", Quickshell.shellDir + "/cava-spectrum.conf"]
 
         stdout: SplitParser {
             onRead: data => {
-                if (!data) return
+                if (!root.active || !data) return
                 var parts = data.trim().replace(/;$/, "").split(";")
                 var arr = []
                 var idle = true

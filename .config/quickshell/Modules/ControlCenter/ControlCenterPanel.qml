@@ -1,14 +1,14 @@
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls.Basic
 import "../../core" as Core
-import "../../Services" as Services
 import "../../widgets" as Widgets 
 
 Rectangle {
     id: controlCenterPanel
 
     width: Core.Theme.controlCenterPanelWidth
-    height: Core.Theme.controlCenterPanelHeight
+    height: Math.min(Core.Theme.controlCenterPanelHeight, parent.height)
     bottomLeftRadius: Core.Theme.radius
     color: Core.Theme.bg
 
@@ -20,26 +20,31 @@ Rectangle {
     // Block dim click-through
     MouseArea { anchors.fill: parent }
 
-    ColumnLayout {
+    ScrollView {
+        id: panelScroll
         anchors.fill: parent
         anchors.margins: Core.Theme.marginM
-        spacing: 8
+        contentWidth: availableWidth
+        contentHeight: panelContent.implicitHeight
+        clip: true
+        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+        ScrollBar.vertical.policy: ScrollBar.AsNeeded
 
-        // avatar, power off, reboot, lockscreen
-        Widgets.ControlCenterProfile { }
-        
-        // performance statistics
-        Widgets.ControlCenterStatistics { }
+        ColumnLayout {
+            id: panelContent
+            width: panelScroll.availableWidth
+            spacing: Core.Theme.marginM
 
-        Widgets.ControlCenterBrightness { }
+            // Avatar, power off, reboot, lockscreen.
+            Widgets.ControlCenterProfile { }
 
-        // ── Media Player ──
-        Widgets.ControlCenterMediaPlayer { }
+            Widgets.ControlCenterStatistics { }
+            Widgets.ControlCenterBrightness { }
+            Widgets.ControlCenterButtons { }
+            Widgets.ControlCenterMediaPlayer { }
+            Widgets.ControlCenterNetworkManager { }
 
-        
-        Widgets.ControlCenterNetworkManager { }
-
-        Item { Layout.fillHeight: true }
+        }
     }
     
 }

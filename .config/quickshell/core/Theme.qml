@@ -21,6 +21,7 @@ Singleton {
 
     // Typography
     readonly property string fontFamily: "JetBrainsMono Nerd Font"
+    readonly property string iconFontFamily: "Symbols Nerd Font Mono"
     readonly property int fontSize: 16
 
     // Layout
