@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Shine Everforest
+Comment=Custom Kitty and bar palette
+
+[X-GNOME-Metatheme]
+GtkTheme=Shine-Everforest
+IconTheme=Papirus-Dark

@@ -1,0 +1,113 @@
+{
+  "manifest_version": 3,
+  "name": "Shine Everforest",
+  "version": "1.0.0",
+  "description": "Your Kitty and bar colors: dark background, cream text, green accents.",
+  "theme": {
+    "colors": {
+      "frame": [
+        30,
+        35,
+        38
+      ],
+      "frame_inactive": [
+        30,
+        35,
+        38
+      ],
+      "frame_incognito": [
+        30,
+        35,
+        38
+      ],
+      "frame_incognito_inactive": [
+        30,
+        35,
+        38
+      ],
+      "toolbar": [
+        39,
+        46,
+        51
+      ],
+      "tab_text": [
+        211,
+        198,
+        170
+      ],
+      "tab_background_text": [
+        157,
+        169,
+        160
+      ],
+      "bookmark_text": [
+        211,
+        198,
+        170
+      ],
+      "ntp_background": [
+        30,
+        35,
+        38
+      ],
+      "ntp_text": [
+        211,
+        198,
+        170
+      ],
+      "ntp_link": [
+        167,
+        192,
+        128
+      ],
+      "button_background": [
+        39,
+        46,
+        51
+      ],
+      "toolbar_button_icon": [
+        211,
+        198,
+        170
+      ],
+      "toolbar_text": [
+        211,
+        198,
+        170
+      ],
+      "omnibox_background": [
+        30,
+        35,
+        38
+      ],
+      "omnibox_text": [
+        211,
+        198,
+        170
+      ],
+      "toolbar_top_separator": [
+        74,
+        85,
+        91
+      ],
+      "toolbar_bottom_separator": [
+        74,
+        85,
+        91
+      ],
+      "toolbar_vertical_separator": [
+        74,
+        85,
+        91
+      ],
+      "tab_line": [
+        167,
+        192,
+        128
+      ]
+    },
+    "properties": {
+      "ntp_logo_alternate": 1
+    }
+  }
+}
